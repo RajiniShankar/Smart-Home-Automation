@@ -1,0 +1,15 @@
+<ion-list class="flex flex-col w-full">
+  <div class="flex-col justify-items-center place-items-center">
+    <ion-item>
+      <ion-label position="stacked">Ip Address</ion-label>
+      <ion-input [(ngModel)]="baseUrl"></ion-input>
+    </ion-item>
+    <ion-button (click)="fetchData()">Reload</ion-button>
+  </div>
+  <div *ngFor="let e of electronics; let index = index" class="flex w-full justify-between p-5 ">
+    
+    <div>{{ e.name }}</div>
+    <ion-toggle slot="start" name="blackberry" color="dark" checked='{{ e.status }}' (ionChange)="toggle(e)"></ion-toggle>
+
+  </div>
+</ion-list>
